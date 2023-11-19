@@ -11,3 +11,13 @@ GROUP BY c.login;
 
 # Задание 2: Проверяем, что статусы заказов в базе данных записываются корректно. Выводим все трекеры заказов и их статусы.
  
+SELECT  track,
+          status,
+                 CASE
+                          WHEN finished = true THEN  "status  2"
+                          WHEN cancelled = true THEN "status  - 1"
+                          WHEN "inDelivery" = true THEN "status   1"
+                          ELSE "status  0"
+                END
+  FROM "Orders";
+
