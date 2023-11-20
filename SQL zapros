@@ -14,10 +14,12 @@ GROUP BY c.login;
 SELECT  track,
           status,
                  CASE
-                          WHEN finished = true THEN  "status  2"
-                          WHEN cancelled = true THEN "status  - 1"
-                          WHEN "inDelivery" = true THEN "status   1"
-                          ELSE "status  0"
+                          WHEN finished = true THEN 2
+                          WHEN cancelled = true THEN - 1
+                          WHEN "inDelivery" = true THEN 1
+                          ELSE 0
                 END
   FROM "Orders";
+
+
 
